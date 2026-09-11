@@ -1,0 +1,359 @@
+# PROMPT DE DISEÑO WEB — Johan López | Psicología Clínica, Salud Mental y Drogodependencias
+
+> Guía técnica y de contenido, completa y accionable, para que un diseñador/desarrollador (o una IA generativa de código) construya el sitio web tal como se especifica aquí. Basado en la referencia visual proporcionada, con dos secciones nuevas agregadas al menú: **Biblioteca** y **Reglamentación jurídica**.
+
+---
+
+## 1. Objetivo del sitio
+
+Landing page profesional de una página (one-page) para un psicólogo clínico especializado en salud mental y drogodependencias, con:
+
+- Presentación profesional y credenciales académicas.
+- Enfoque terapéutico integral (Cuerpo · Mente · Alma).
+- Áreas de acompañamiento individual y familiar.
+- Servicios especializados en adicciones/drogodependencias.
+- Servicios institucionales (empresas, colegios).
+- Formulario de contacto + canal directo de WhatsApp.
+- **Nuevo:** Biblioteca de recursos descargables.
+- **Nuevo:** Sección de reglamentación jurídica (normativa colombiana en salud mental, adicciones y protocolos escolares).
+
+**Tono visual:** cálido, profesional, humano, sobrio. Azul marino profundo + blanco + acentos en verde lima, naranja, morado/índigo y verde.
+
+---
+
+## 2. Stack técnico sugerido
+
+```
+Frontend:     HTML5 + CSS3 (o Tailwind CSS) + JavaScript (o React/Next.js)
+Formulario:   Formspree / EmailJS / backend propio (Node + Nodemailer)
+WhatsApp CTA: enlace directo https://wa.me/573104623399
+Íconos:       Lucide Icons / Phosphor Icons (line-style, coherente con la referencia)
+Tipografía:   Serif elegante para titulares (ej. Playfair Display) + Sans-serif para cuerpo (ej. Inter / Poppins)
+Hosting:      Vercel / Netlify / hosting compartido con PHP si se requiere backend simple
+CMS opcional: Biblioteca y Reglamentación jurídica como colecciones dinámicas (Sanity, Notion API, o Markdown/MDX estático)
+Responsive:   Mobile-first, breakpoints 375 / 768 / 1024 / 1440
+Accesibilidad: WCAG 2.1 AA (contraste, alt text, navegación por teclado, aria-labels)
+```
+
+---
+
+## 3. Paleta de colores
+
+| Uso | Color | Hex aprox. |
+|---|---|---|
+| Fondo header / hero / footer | Azul marino profundo | `#0B1B34` |
+| Texto sobre fondo oscuro | Blanco | `#FFFFFF` |
+| Acento subtítulo hero / línea activa nav | Verde lima | `#C9E265` |
+| Fondo secciones claras | Blanco / gris muy claro | `#FFFFFF` / `#F7F8FA` |
+| Ícono "Cuerpo" | Naranja | `#F5A623` |
+| Ícono "Mente" / Evaluación | Índigo / morado | `#6C5CE7` |
+| Ícono "Alma" / Intervención / Empresas | Verde | `#2E9B4F` |
+| Ícono "Orientación familiar" | Naranja | `#F5A623` |
+| Ícono "Normatividad" | Negro / gris oscuro | `#1B1F2A` |
+| Ícono "Ruta de atención" | Azul claro | `#5B8DEF` |
+| Botón primario (Enviar mensaje) | Naranja degradado | `#F5A623 → #F58B23` |
+| Botón WhatsApp / institucional | Verde | `#2E9B4F` |
+| Bordes / líneas divisorias | Gris claro | `#E4E7EC` |
+
+## 4. Tipografía
+
+```
+H1 / Nombre (JOHAN LÓPEZ):      Serif Bold, mayúsculas, ~56px desktop / ~34px mobile
+H2 (títulos de sección):         Serif SemiBold, ~30px / ~22px
+H3 (títulos de tarjeta):         Sans-serif Bold, ~18px
+Cuerpo de texto:                 Sans-serif Regular, ~15-16px, line-height 1.5
+Subtítulo hero (verde lima):     Sans-serif Medium, ~18px
+Nav links:                       Sans-serif Medium, ~15px, uppercase opcional
+```
+
+---
+
+## 5. Mapa del sitio (Sitemap) — nav actualizado
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  NAV BAR (fijo, fondo azul marino)                                          │
+│                                                                               │
+│   Inicio   Conoce mi enfoque   Biblioteca   Reglamentación jurídica  Contacto│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+- **Inicio** → home / one-page (ancla a secciones).
+- **Conoce mi enfoque** → ancla o subpágina con la filosofía Cuerpo·Mente·Alma ampliada + trayectoria.
+- **Biblioteca** *(nueva)* → subpágina con recursos: artículos, guías descargables, videos, lecturas recomendadas.
+- **Reglamentación jurídica** *(nueva)* → subpágina con normativa vigente en Colombia sobre salud mental, drogodependencias y protocolos escolares.
+- **Contacto** → ancla al formulario + WhatsApp.
+
+---
+
+## 6. Wireframe ASCII — Página principal (Home)
+
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║ [LOGO/marca opcional]     Inicio  Conoce mi enfoque  Biblioteca  Reg.Jurídica  Contacto ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║                                                                                 ║
+║   JOHAN LÓPEZ                              ┌─────────────────────────────┐    ║
+║   ───────────                              │                             │    ║
+║   Psicología Clínica • Salud Mental •      │   [FOTO/ILUSTRACIÓN:        │    ║
+║   Drogodependencias                        │    estantería + planta +    │    ║
+║                                             │    símbolo triqueta         │    ║
+║   Psicólogo — Universidad IUE              │    multicolor + cuadro      │    ║
+║   Mg. Drogodependencias — Universidad CES  │    religioso enmarcado]     │    ║
+║   Esp. Psic. Clínica y S.Mental — UPB      │                             │    ║
+║   Esp. Farmacodependencia — Luis Amigó     └─────────────────────────────┘    ║
+║                                                                                 ║
+║   │ "No acompaño diagnósticos, acompaño personas, historias                   ║
+║   │  y procesos de transformación."                                          ║
+║   │  Comprender para integrar. Integrar para transformar.                    ║
+║                                                                                 ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+┌───────────────────────────────────────────────────────────────────────────────┐
+│                     Una mirada integral del ser humano                        │
+│                                                                                 │
+│   (◉ naranja)          (◉ índigo)              (◉ verde)                      │
+│   CUERPO                MENTE                    ALMA                        │
+│   Reconocemos el        Exploramos                Conectamos con tu           │
+│   cuerpo como parte     pensamientos y             propósito y valores        │
+│   esencial del          emociones para             para vivir con             │
+│   equilibrio y el       comprender y                sentido y                 │
+│   bienestar integral.   transformar tu              autenticidad.             │
+│                          experiencia.                                         │
+└───────────────────────────────────────────────────────────────────────────────┘
+
+┌───────────────────────────────┬───────────────────────────────────────────────┐
+│ Áreas de acompañamiento       │ Adicciones y Drogodependencias                │
+│                                │  (fondo azul marino, tarjetas oscuras)        │
+│ [icono]   [icono]   [icono]   │ ┌──────┬──────┬──────┬──────┬──────┐         │
+│  niño      escudo    nube     │ │Eval. │Interv│Orien.│Norma │Ruta  │         │
+│ interior  (miedos)  (crisis)  │ │      │ención│famil.│tividad│atenc.│         │
+│                                │ └──────┴──────┴──────┴──────┴──────┘         │
+│ "Sana tu   "Miedos" "Crisis   │ 5 tarjetas con ícono circular de color +      │
+│  niño               emocio-   │ título + descripción breve (ver sección 8)    │
+│  interior"          nales"    │                                                │
+└───────────────────────────────┴───────────────────────────────────────────────┘
+
+┌───────────────────────────────────────────────────────────────────────────────┐
+│ [icono] Empresas, colegios e instituciones                                    │
+│         Conferencias, talleres y programas de prevención en salud mental y    │
+│         adicciones para promover entornos saludables y productivos.           │
+│         [ Solicitar propuesta institucional → ]  (botón verde)                │
+│                                                                                 │
+│  [icono]        [icono]      [icono]              [icono]                    │
+│  Conferencias   Talleres     Programas de          Acompañamiento             │
+│                               prevención             continuo                  │
+└───────────────────────────────────────────────────────────────────────────────┘
+
+┌───────────────────────────────────────┬───────────────────────────────────────┐
+│ Contacto                               │  → Agenda tu cita aquí ←              │
+│                                         │  (bloque verde)                       │
+│ ☎ WhatsApp: 310 462 3399               │                                        │
+│ ✉ jltriada8@gmail.com                  │  ¿Prefieres escribir por WhatsApp?    │
+│ 📍 Medellín, Antioquia - Colombia      │  Estoy aquí para escucharte y         │
+│                                         │  orientarte en tu proceso.            │
+│ [Nombre completo] [Correo electrónico] │                                        │
+│ [Teléfono/WhatsApp] [Asunto]           │  [ 📱 Escríbeme por WhatsApp          │
+│ [Cuéntame brevemente en qué puedo      │     310 462 3399 ]                    │
+│  ayudarte...              ]            │                                        │
+│                                         │                                        │
+│ [   Enviar mensaje ✈   ]  (naranja)    │                                        │
+└───────────────────────────────────────┴───────────────────────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║  JOHAN LÓPEZ                Cuerpo • Mente • Alma          © 2026 Johan López ║
+║  Psicología Clínica •       Un proceso de comprensión,     Psicólogo          ║
+║  Salud Mental •              integración y transformación   Todos los         ║
+║  Drogodependencias           de manera consciente.          derechos          ║
+║                                                               reservados.      ║
+║                                              (f) (Instagram) (in)             ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 7. Especificación detallada por sección (contenido y comportamiento)
+
+### 7.1 Header / Navegación
+- Fondo azul marino fijo (`sticky top`), altura ~72px.
+- Ítem activo subrayado en verde lima (ver "Inicio" en la referencia).
+- En mobile: menú hamburguesa, drawer lateral con los 5 ítems.
+- Los ítems nuevos **Biblioteca** y **Reglamentación jurídica** van entre "Conoce mi enfoque" y "Contacto".
+
+### 7.2 Hero
+- Columna izquierda: nombre en serif grande, subtítulo en verde lima, lista de credenciales (4 líneas, formato "Título — Institución"), cita destacada con borde izquierdo naranja/verde.
+- Columna derecha: imagen/ilustración de un espacio cálido (estantería, libros, planta, cuadro religioso, símbolo triqueta con degradado arcoíris — representando la integración cuerpo-mente-alma).
+- CTA implícito: la cita funciona como statement de marca personal, no hay botón aquí.
+
+### 7.3 "Una mirada integral del ser humano"
+- 3 columnas iguales separadas por líneas verticales sutiles (solo desktop).
+- Cada columna: ícono circular de color de fondo pastel + título en negrita + párrafo de 2-3 líneas.
+- Textos exactos:
+  - **Cuerpo:** "Reconocemos el cuerpo como parte esencial del equilibrio y el bienestar integral."
+  - **Mente:** "Exploramos pensamientos y emociones para comprender y transformar tu experiencia."
+  - **Alma:** "Conectamos con tu propósito y valores para vivir con sentido y autenticidad."
+
+### 7.4 "Áreas de acompañamiento" (columna izquierda, fondo claro)
+- 3 tarjetas blancas con borde sutil, ícono línea morado/índigo, título en negrita:
+  - **Sana tu niño interior**
+  - **Miedos**
+  - **Crisis emocionales**
+
+### 7.5 "Adicciones y Drogodependencias" (columna derecha, fondo azul marino)
+- 5 tarjetas oscuras con ícono circular de color + título + descripción corta:
+  1. **Evaluación** (índigo) — "Valoración integral para comprender tu historia y necesidades."
+  2. **Intervención** (verde) — "Plan terapéutico personalizado y basado en evidencia."
+  3. **Orientación familiar** (naranja) — "Acompañamiento a la familia en el proceso de recuperación."
+  4. **Normatividad** (negro/gris oscuro) — "Información clara sobre normatividad y derechos."
+  5. **Ruta de atención y debido proceso para colegios** (azul claro) — "Orientación y apoyo para instituciones educativas."
+
+### 7.6 "Empresas, colegios e instituciones"
+- Bloque introductorio con ícono verde + texto + botón CTA verde "Solicitar propuesta institucional →".
+- 4 columnas con ícono verde outline + título + descripción:
+  1. **Conferencias** — "Charlas inspiradoras y basadas en experiencia clínica."
+  2. **Talleres** — "Espacios prácticos para el desarrollo personal y grupal."
+  3. **Programas de prevención** — "Estrategias efectivas para el bienestar organizacional."
+  4. **Acompañamiento continuo** — "Seguimiento y apoyo para lograr resultados sostenibles."
+
+### 7.7 Contacto
+- Columna izquierda: título "Contacto" + 3 datos con ícono (WhatsApp, correo, ubicación) + formulario de 5 campos (nombre, correo, teléfono, asunto, mensaje) + botón naranja "Enviar mensaje".
+- Columna derecha: bloque verde destacado "→ Agenda tu cita aquí ←" con texto de invitación + botón grande "Escríbeme por WhatsApp — 310 462 3399" que abre `https://wa.me/573104623399`.
+
+### 7.8 Footer
+- Fondo azul marino. 3 columnas: marca + tagline / frase filosófica / copyright + redes sociales (Facebook, Instagram, LinkedIn con íconos circulares).
+
+---
+
+## 8. NUEVA SECCIÓN — Biblioteca (subpágina)
+
+**Objetivo:** centralizar recursos de valor (artículos, guías PDF, videos, lecturas recomendadas) para pacientes, familias e instituciones.
+
+### Wireframe ASCII
+
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║  Inicio  Conoce mi enfoque  Biblioteca  Reglamentación jurídica  Contacto      ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║                        BIBLIOTECA DE RECURSOS                                 ║
+║      Material de apoyo para pacientes, familias e instituciones               ║
+║                                                                                 ║
+║  [ Todos ] [ Salud mental ] [ Drogodependencias ] [ Familia ] [ Colegios ]    ║  ← filtros
+║                                                                                 ║
+║  ┌───────────────┐   ┌───────────────┐   ┌───────────────┐                   ║
+║  │ [thumb/ícono] │   │ [thumb/ícono] │   │ [thumb/ícono] │                   ║
+║  │ Guía PDF       │   │ Artículo       │   │ Video          │                   ║
+║  │ "Cómo hablar   │   │ "Señales de    │   │ "Primeros      │                   ║
+║  │ con tu hijo    │   │  alerta en     │   │  auxilios      │                   ║
+║  │ sobre drogas"  │   │  consumo"      │   │  psicológicos" │                   ║
+║  │ [Descargar ⬇]  │   │ [Leer más →]   │   │ [Ver video ▶]  │                   ║
+║  └───────────────┘   └───────────────┘   └───────────────┘                   ║
+║              ... (grid repetible, 3 columnas desktop / 1 mobile)              ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
+
+### Especificación
+- **Filtros por categoría:** Salud mental · Drogodependencias · Familia · Colegios/Instituciones · Duelo y crisis.
+- **Tipos de recurso:** artículo (lectura in-site), PDF descargable, video embebido (YouTube/Vimeo), infografía.
+- **Tarjeta de recurso:** miniatura o ícono representativo, etiqueta de tipo (Guía / Artículo / Video), título, descripción de 1 línea, botón de acción según tipo.
+- **Buscador** (opcional) en la parte superior.
+- Cada recurso puede tener su propia página de detalle (`/biblioteca/[slug]`) si se implementa como CMS.
+- Formato de metadatos sugerido por recurso:
+  ```
+  título, categoría(s), tipo, fecha de publicación, resumen corto,
+  archivo/enlace, tiempo estimado de lectura/visualización
+  ```
+
+---
+
+## 9. NUEVA SECCIÓN — Reglamentación jurídica (subpágina)
+
+**Objetivo:** ofrecer transparencia y respaldo legal/normativo sobre el manejo de salud mental, adicciones y protocolos escolares en Colombia — relevante especialmente para colegios y familias que consultan por temas de debido proceso.
+
+### Wireframe ASCII
+
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║  Inicio  Conoce mi enfoque  Biblioteca  Reglamentación jurídica  Contacto      ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║                     REGLAMENTACIÓN JURÍDICA                                   ║
+║   Marco normativo vigente en Colombia sobre salud mental, consumo de          ║
+║   sustancias psicoactivas y protocolos institucionales                        ║
+║                                                                                 ║
+║  ┌─────────────────────────────────────────────────────────────────────┐     ║
+║  │ ⚖ Ley 1616 de 2013 — Ley de Salud Mental                            │     ║
+║  │   Resumen breve del alcance de la norma.        [Ver documento ↗]    │     ║
+║  ├─────────────────────────────────────────────────────────────────────┤     ║
+║  │ ⚖ Ley 1566 de 2012 — Atención integral a personas con consumo       │     ║
+║  │   de SPA.                                        [Ver documento ↗]    │     ║
+║  ├─────────────────────────────────────────────────────────────────────┤     ║
+║  │ ⚖ Ley 1098 de 2006 — Código de Infancia y Adolescencia               │     ║
+║  │   (debido proceso en colegios).                  [Ver documento ↗]    │     ║
+║  ├─────────────────────────────────────────────────────────────────────┤     ║
+║  │ ⚖ Ruta de Atención Integral para la Convivencia Escolar (Ley 1620)  │     ║
+║  │   Protocolo para instituciones educativas.        [Ver documento ↗]    │     ║
+║  └─────────────────────────────────────────────────────────────────────┘     ║
+║                                                                                 ║
+║  ┌───────────────────────────────────────────────────────────────────┐       ║
+║  │  ¿Tu colegio necesita orientación en la aplicación de estas        │       ║
+║  │  normas?  [ Solicitar asesoría institucional → ]  (botón verde)    │       ║
+║  └───────────────────────────────────────────────────────────────────┘       ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
+
+### Especificación
+- **Listado tipo acordeón o tarjetas apilables**, cada una con: ícono de balanza/ley, nombre y número de la norma, resumen de 1-2 líneas en lenguaje claro (no jurídico complejo), enlace externo al texto oficial (función pública / SUIN-Juriscol) o PDF propio.
+- **Nota de descargo legal** al final: aclarar que el contenido es informativo y no constituye asesoría legal formal.
+- Puede agruparse por categoría: *Salud mental* · *Consumo de sustancias* · *Infancia y adolescencia* · *Convivencia escolar / debido proceso*.
+- CTA final enlazando a la sección de Contacto o a WhatsApp, orientado a colegios/instituciones (coherente con la tarjeta "Ruta de atención y debido proceso para colegios" del home).
+- **Importante:** revisar y mantener actualizado el marco normativo citado (leyes, decretos, resoluciones) con una fuente jurídica verificada antes de publicar, ya que la legislación puede modificarse.
+
+---
+
+## 10. Componentes reutilizables (design system)
+
+```
+- Card genérica: ícono + título + descripción (usada en 6+ secciones)
+- Botón primario (naranja, texto blanco, ícono opcional)
+- Botón secundario (verde, texto blanco, ícono opcional)
+- Botón outline (fondo transparente, borde de color)
+- Chip/filtro de categoría (usado en Biblioteca)
+- Bloque de cita destacada (borde izquierdo de color + texto itálico/serif)
+- Input de formulario (label flotante o placeholder, borde inferior)
+- Ítem de acordeón (usado en Reglamentación jurídica)
+```
+
+## 11. Responsive
+
+```
+Mobile (≤480px):    1 columna, menú hamburguesa, hero apilado (texto arriba, imagen abajo)
+Tablet (768px):     2 columnas en grids de tarjetas
+Desktop (≥1024px):  layout tal como en la referencia (2-5 columnas según sección)
+```
+
+## 12. Accesibilidad y SEO
+
+- Todas las imágenes con `alt` descriptivo.
+- Contraste mínimo 4.5:1 en texto sobre fondo azul marino.
+- Formulario con `<label>` asociados y validación accesible.
+- Enlaces de WhatsApp con `aria-label="Escribir por WhatsApp"`.
+- Meta title/description por página (Home, Conoce mi enfoque, Biblioteca, Reglamentación jurídica, Contacto).
+- Datos estructurados `schema.org/Person` + `schema.org/MedicalBusiness` o `ProfessionalService`.
+- Sitemap.xml y robots.txt incluyendo las nuevas rutas `/biblioteca` y `/reglamentacion-juridica`.
+
+## 13. Checklist de entrega
+
+```
+[ ] Header con 5 ítems de navegación (incluye Biblioteca y Reglamentación jurídica)
+[ ] Hero con credenciales y cita destacada
+[ ] Sección Cuerpo · Mente · Alma
+[ ] Áreas de acompañamiento (3 tarjetas)
+[ ] Adicciones y Drogodependencias (5 tarjetas)
+[ ] Empresas, colegios e instituciones (intro + 4 tarjetas + CTA)
+[ ] Formulario de contacto funcional + validaciones
+[ ] Bloque WhatsApp con enlace directo wa.me
+[ ] Footer con redes sociales
+[ ] Subpágina Biblioteca con filtros y tarjetas de recursos
+[ ] Subpágina Reglamentación jurídica con listado normativo y CTA institucional
+[ ] Responsive mobile/tablet/desktop
+[ ] Accesibilidad AA + SEO básico
+```

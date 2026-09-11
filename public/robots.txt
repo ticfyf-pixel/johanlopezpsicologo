@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://johan-lopez-psicologo.onrender.com/sitemap.xml
