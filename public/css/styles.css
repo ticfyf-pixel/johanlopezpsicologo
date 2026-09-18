@@ -21,8 +21,10 @@
   --radius: 18px;
   --header: 76px;
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
-  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
   --max: 1180px;
+  --canvas: #0b1b34;
 }
 
 *,
@@ -168,13 +170,55 @@ textarea {
 }
 
 .hero {
-  background:
-    radial-gradient(circle at 80% 20%, rgba(108, 92, 231, 0.18), transparent 28%),
-    radial-gradient(circle at 15% 80%, rgba(46, 155, 79, 0.12), transparent 32%),
-    linear-gradient(160deg, var(--navy) 0%, #091525 58%, #132c4f 100%);
+  position: relative;
+  min-height: 100vh;
   color: var(--white);
-  padding: 72px 0 88px;
+  padding: 0;
   overflow: hidden;
+  background: var(--navy);
+}
+
+.hero-still {
+  position: absolute;
+  inset: 0;
+  background: var(--navy) center right / cover no-repeat;
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(11, 27, 52, 0.94) 0%, rgba(11, 27, 52, 0.78) 42%, rgba(11, 27, 52, 0.22) 68%, rgba(11, 27, 52, 0.08) 100%),
+    linear-gradient(180deg, rgba(11, 27, 52, 0.35) 0%, transparent 28%, rgba(11, 27, 52, 0.45) 100%);
+  pointer-events: none;
+}
+
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: 108px 0 96px;
+  max-width: 640px;
+}
+
+.hero-copy .btn {
+  margin-top: 28px;
+}
+
+.hero h1 {
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero .quote {
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
 .hero-grid {
@@ -1006,11 +1050,20 @@ textarea:focus-visible {
   .enfoque-grid {
     grid-template-columns: 1fr;
   }
-  .hero { padding: 48px 0 56px; }
+  .hero { padding: 0; }
   .section { padding: 64px 0; }
 }
 
-@media print {
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-grain { display: none; }
+  .card:hover,
+  .resource-card:hover,
+  .dark-card:hover,
+  .enfoque-card:hover {
+    transform: none;
+  }
+}
   .site-header,
   .site-footer,
   .float-wa,
