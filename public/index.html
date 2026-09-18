@@ -75,12 +75,19 @@
   </aside>
 
   <main id="contenido">
-    <section class="hero">
-      <div class="hero-still" style="background-image:url('/assets/hero-poster.jpg')" role="img" aria-label="Tres hilos en oro, índigo y verde sobre un fondo azul marino, imagen generada con IA"></div>
+    <section class="hero" data-hero>
+      <div class="hero-still" data-hero-still style="background-image:url('/assets/hero-poster.jpg')" role="img" aria-label="Tres hilos en oro, índigo y verde sobre un fondo azul marino, imagen generada con IA"></div>
       <div class="hero-scrim"></div>
       <div class="hero-grain"></div>
+      <svg class="hero-draw" viewBox="0 0 600 900" aria-hidden="true">
+        <path class="gold" d="M310 0 C300 140 250 240 270 360 C292 490 360 560 330 720 C310 820 340 880 360 900"/>
+        <path class="indigo" d="M338 0 C348 160 300 250 318 380 C340 520 400 590 370 740 C350 840 380 880 400 900"/>
+        <path class="green" d="M366 0 C390 150 340 260 358 390 C380 530 450 610 410 760 C385 850 420 885 440 900"/>
+      </svg>
+      <div class="particles" data-particles aria-hidden="true"></div>
       <div class="wrap">
         <div class="hero-copy">
+          <p class="eyebrow">Cuerpo · Mente · Alma</p>
           <h1>JOHAN LÓPEZ</h1>
           <p class="hero-kicker">Psicología Clínica • Salud Mental • Drogodependencias</p>
           <ul class="creds">
@@ -96,28 +103,34 @@
           <a class="btn btn-primary" href="#contacto">Agenda tu cita</a>
         </div>
       </div>
+      <a class="scroll-cue" href="#enfoque-breve">Desliza<i></i></a>
     </section>
 
     <section class="section" id="enfoque-breve">
-      <div class="wrap">
+      <div class="wrap reveal">
+        <svg class="thread-rule" viewBox="0 0 220 18" aria-hidden="true">
+          <path d="M10 9 C40 2 70 16 110 9 C150 2 180 16 210 9" stroke="#f5a623"/>
+          <path d="M10 11 C50 18 80 4 110 11 C140 18 170 4 210 11" stroke="#6c5ce7"/>
+          <path d="M10 7 C60 14 90 3 110 7 C130 11 160 4 210 7" stroke="#2e9b4f"/>
+        </svg>
         <h2 class="section-title">Una mirada integral del ser humano</h2>
         <p class="section-lead">El proceso terapéutico reconoce tres dimensiones que se sostienen entre sí. Cuando una se descuida, las otras también piden atención.</p>
-        <div class="triad">
-          <article>
+        <div class="triad" data-triad>
+          <article data-thread="cuerpo">
             <div class="icon-orb orb-orange">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3"/><path d="M5 19c1.2-3 4-5 7-5s5.8 2 7 5"/></svg>
             </div>
             <h3>Cuerpo</h3>
             <p>Reconocemos el cuerpo como parte esencial del equilibrio y el bienestar integral.</p>
           </article>
-          <article>
+          <article data-thread="mente">
             <div class="icon-orb orb-indigo">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c4 4 6 7.2 6 10a6 6 0 1 1-12 0c0-2.8 2-6 6-10Z"/></svg>
             </div>
             <h3>Mente</h3>
             <p>Exploramos pensamientos y emociones para comprender y transformar tu experiencia.</p>
           </article>
-          <article>
+          <article data-thread="alma">
             <div class="icon-orb orb-green">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.6-7 10-7 10Z"/></svg>
             </div>
@@ -129,7 +142,7 @@
     </section>
 
     <section class="split" id="servicios">
-      <div class="light-pane">
+      <div class="light-pane reveal">
         <h2 class="pane-title">Áreas de acompañamiento</h2>
         <div class="cards-3">
           <article class="card">
@@ -155,7 +168,7 @@
           </article>
         </div>
       </div>
-      <div class="dark-pane">
+      <div class="dark-pane reveal">
         <h2 class="pane-title">Adicciones y Drogodependencias</h2>
         <div class="cards-5">
           <article class="dark-card">
@@ -188,7 +201,7 @@
     </section>
 
     <section class="section institutions" id="instituciones">
-      <div class="wrap">
+      <div class="wrap reveal">
         <div class="inst-intro">
           <div class="icon-orb orb-green">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-8h6v8"/></svg>
@@ -225,7 +238,7 @@
     </section>
 
     <section class="section contact" id="contacto">
-      <div class="wrap contact-grid">
+      <div class="wrap contact-grid reveal">
         <div class="contact-box">
           <h2 class="pane-title">Contacto</h2>
           <ul class="contact-list">
