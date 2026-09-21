@@ -219,33 +219,6 @@ textarea {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 }
 
-.hero-draw {
-  position: absolute;
-  right: -6%;
-  top: 0;
-  height: 100%;
-  width: min(58vw, 760px);
-  pointer-events: none;
-  opacity: 0.55;
-}
-
-.hero-draw path {
-  fill: none;
-  stroke-linecap: round;
-  stroke-width: 3.2;
-  stroke-dasharray: 1400;
-  stroke-dashoffset: 1400;
-  animation: draw 3.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.hero-draw .gold { stroke: #f5a623; animation-delay: 0.15s; }
-.hero-draw .indigo { stroke: #8b7cf7; animation-delay: 0.45s; }
-.hero-draw .green { stroke: #7bc67e; animation-delay: 0.75s; }
-
-@keyframes draw {
-  to { stroke-dashoffset: 0; }
-}
-
 .particles {
   position: absolute;
   inset: 0;
@@ -386,19 +359,6 @@ textarea {
 @keyframes pulse {
   0%, 100% { opacity: 0.25; transform: scaleY(0.7); }
   50% { opacity: 1; transform: scaleY(1); }
-}
-
-.thread-rule {
-  display: block;
-  width: min(220px, 50%);
-  height: 18px;
-  margin: 0 auto 28px;
-}
-
-.thread-rule path {
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
 }
 
 .reveal {
@@ -894,7 +854,7 @@ textarea:focus-visible {
   min-height: 46vh;
   display: grid;
   align-items: end;
-  background: var(--navy) url("/assets/hero-poster.jpg") 78% 42% / cover no-repeat;
+  background: var(--navy) url("/assets/hero-bg.jpg") center / cover no-repeat;
   color: #fffcf6;
   padding: 110px 0 72px;
   overflow: hidden;
@@ -930,10 +890,6 @@ textarea:focus-visible {
 .page-hero .hero-kicker {
   color: var(--lime);
   margin-bottom: 12px;
-}
-
-.page-hero .thread-rule {
-  margin: 0 0 22px;
 }
 
 .page-hero h1 {
@@ -1255,10 +1211,6 @@ textarea:focus-visible {
   .dark-pane {
     padding: 48px 28px;
   }
-
-  .hero-draw {
-    opacity: 0.28;
-  }
 }
 
 @media (max-width: 768px) {
@@ -1292,7 +1244,6 @@ textarea:focus-visible {
   html { scroll-behavior: auto; }
   .hero-grain,
   .particles,
-  .hero-draw,
   .scroll-cue i { display: none; }
   .hero-still,
   .creds li,

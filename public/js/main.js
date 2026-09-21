@@ -24,10 +24,8 @@
     header?.classList.toggle("is-scrolled", window.scrollY > 18);
     if (reduce) return;
     const still = document.querySelector("[data-hero-still]");
-    const draw = document.querySelector(".hero-draw");
     const y = window.scrollY;
     if (still) still.style.translate = `0 ${Math.min(y * 0.22, 140)}px`;
-    if (draw) draw.style.translate = `0 ${Math.min(y * 0.12, 80)}px`;
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
