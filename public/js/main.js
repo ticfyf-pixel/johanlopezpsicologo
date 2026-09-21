@@ -24,11 +24,27 @@
     header?.classList.toggle("is-scrolled", window.scrollY > 18);
     if (reduce) return;
     const still = document.querySelector("[data-hero-still]");
+    const mark = document.querySelector("[data-hero-mark]");
     const y = window.scrollY;
     if (still) still.style.translate = `0 ${Math.min(y * 0.22, 140)}px`;
+    if (mark) mark.style.setProperty("--sy", `${Math.min(y * 0.08, 48)}px`);
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+
+  const hero = document.querySelector("[data-hero]");
+  const mark = document.querySelector("[data-hero-mark]");
+  if (hero && mark && !reduce) {
+    hero.addEventListener("mousemove", (event) => {
+      const box = hero.getBoundingClientRect();
+      const x = (event.clientX - box.left) / box.width - 0.5;
+      const y = (event.clientY - box.top) / box.height - 0.5;
+      mark.style.setProperty("--mx", `${x * 28}px`);
+      mark.style.setProperty("--my", `${y * 18}px`);
+      mark.style.setProperty("--rx", `${y * -9}deg`);
+      mark.style.setProperty("--ry", `${x * 12}deg`);
+    });
+  }
 
   if (!reduce) {
     const field = document.querySelector("[data-particles]");

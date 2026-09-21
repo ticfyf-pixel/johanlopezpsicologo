@@ -186,6 +186,7 @@ textarea {
   overflow: hidden;
   background: var(--navy);
   isolation: isolate;
+  perspective: 1200px;
 }
 
 .hero-still {
@@ -240,6 +241,76 @@ textarea {
 @keyframes drift {
   from { transform: translateY(110vh); }
   to { transform: translateY(-10vh); }
+}
+
+.hero-mark {
+  --mx: 0px;
+  --my: 0px;
+  --sy: 0px;
+  --rx: 0deg;
+  --ry: 0deg;
+  position: absolute;
+  right: 2%;
+  top: 52%;
+  z-index: 1;
+  width: min(42vw, 520px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%) translate3d(var(--mx), calc(var(--my) + var(--sy)), 0) rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease-out;
+  pointer-events: none;
+}
+
+.hero-mark img {
+  position: relative;
+  z-index: 1;
+  width: 82%;
+  height: auto;
+  max-width: none;
+  filter: drop-shadow(0 28px 48px rgba(0, 0, 0, 0.35));
+  animation: mark-in 1.1s cubic-bezier(0.22, 1, 0.36, 1) both, mark-float 7s ease-in-out 1.1s infinite;
+}
+
+.hero-mark-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(42px);
+  opacity: 0.5;
+  animation: orb-spin 16s linear infinite;
+}
+
+.hero-mark-orb.o1 {
+  inset: 10%;
+  background: radial-gradient(circle at 28% 30%, rgba(245, 166, 35, 0.85), transparent 58%);
+}
+
+.hero-mark-orb.o2 {
+  inset: 6%;
+  background: radial-gradient(circle at 72% 22%, rgba(108, 92, 231, 0.8), transparent 58%);
+  animation-duration: 22s;
+  animation-direction: reverse;
+}
+
+.hero-mark-orb.o3 {
+  inset: 14%;
+  background: radial-gradient(circle at 50% 82%, rgba(46, 155, 79, 0.75), transparent 58%);
+  animation-duration: 28s;
+}
+
+@keyframes mark-in {
+  from { opacity: 0; transform: scale(0.86) rotate(-8deg); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes mark-float {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-18px) rotate(4deg); }
+}
+
+@keyframes orb-spin {
+  to { transform: rotate(360deg); }
 }
 
 .hero-copy {
@@ -1211,6 +1282,11 @@ textarea:focus-visible {
   .dark-pane {
     padding: 48px 28px;
   }
+
+  .hero-mark {
+    width: min(40vw, 360px);
+    right: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1235,7 +1311,17 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
   }
   .hero { padding: 0; }
-  .hero-copy { padding: 92px 0 100px; }
+  .hero-copy { padding: 24px 0 100px; }
+  .hero-mark {
+    position: relative;
+    width: min(64vw, 260px);
+    margin: 88px auto 8px;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    opacity: 1;
+  }
   .section { padding: 72px 0; }
   .hero h1 { font-size: 42px; }
 }
@@ -1244,10 +1330,12 @@ textarea:focus-visible {
   html { scroll-behavior: auto; }
   .hero-grain,
   .particles,
+  .hero-mark-orb,
   .scroll-cue i { display: none; }
   .hero-still,
   .creds li,
-  .reveal {
+  .reveal,
+  .hero-mark img {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
