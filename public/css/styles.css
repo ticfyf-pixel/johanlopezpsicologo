@@ -1530,7 +1530,8 @@ textarea:focus-visible {
 .float-wa,
 .float-ig,
 .float-fb,
-.float-in {
+.float-in,
+.float-tt {
   position: relative;
   width: 56px;
   height: 56px;
@@ -1558,6 +1559,11 @@ textarea:focus-visible {
 .float-in {
   background: #0a66c2;
   box-shadow: 0 12px 30px rgba(10, 102, 194, 0.35);
+}
+
+.float-tt {
+  background: #111111;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .float-wa::after {
