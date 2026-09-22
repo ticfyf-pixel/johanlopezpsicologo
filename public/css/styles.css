@@ -1232,6 +1232,119 @@ textarea:focus-visible {
   padding: 28px;
 }
 
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.mv-card {
+  background: #fffcf6;
+  border: 1px solid rgba(11, 27, 52, 0.08);
+  border-radius: 20px;
+  padding: 36px 32px 32px;
+  text-align: center;
+}
+
+.mv-card h2 {
+  font-family: var(--serif);
+  font-size: 30px;
+  margin: 0 0 16px;
+}
+
+.mv-card p {
+  margin: 0;
+  color: #3d4450;
+  text-align: left;
+}
+
+.mv-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px 36px;
+  flex-wrap: wrap;
+  margin: 40px 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--navy);
+}
+
+.pact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.pact-col .hero-kicker {
+  margin-bottom: 8px;
+}
+
+.pact-col.rights .hero-kicker {
+  color: var(--green);
+}
+
+.pact-col.duties .hero-kicker {
+  color: var(--indigo);
+}
+
+.pact-col h2 {
+  font-family: var(--serif);
+  font-size: 28px;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.pact-col .lede {
+  color: var(--muted);
+  margin: 0 0 20px;
+  font-size: 15px;
+}
+
+.pact-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.pact-item:last-child {
+  border-bottom: 0;
+}
+
+.pact-item strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.pact-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.pact-ico {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.pact-ico svg {
+  width: 18px;
+  height: 18px;
+}
+
+.mv-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
 .timeline {
   display: grid;
   gap: 0;
@@ -1365,6 +1478,11 @@ textarea:focus-visible {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .mv-grid,
+  .pact-grid {
+    grid-template-columns: 1fr;
+  }
+
   .inst-intro,
   .split,
   .contact-grid,
@@ -1385,7 +1503,7 @@ textarea:focus-visible {
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1220px) {
   .nav,
   .btn-nav { display: none; }
   .menu-btn { display: grid; place-items: center; }
