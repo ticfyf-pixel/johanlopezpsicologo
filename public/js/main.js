@@ -39,10 +39,10 @@
       const box = hero.getBoundingClientRect();
       const x = (event.clientX - box.left) / box.width - 0.5;
       const y = (event.clientY - box.top) / box.height - 0.5;
-      mark.style.setProperty("--mx", `${x * 28}px`);
-      mark.style.setProperty("--my", `${y * 18}px`);
-      mark.style.setProperty("--rx", `${y * -9}deg`);
-      mark.style.setProperty("--ry", `${x * 12}deg`);
+      mark.style.setProperty("--mx", `${x * 16}px`);
+      mark.style.setProperty("--my", `${y * 10}px`);
+      mark.style.setProperty("--rx", `${y * -4}deg`);
+      mark.style.setProperty("--ry", `${x * 6}deg`);
     });
   }
 
@@ -50,7 +50,7 @@
     const field = document.querySelector("[data-particles]");
     if (field) {
       const colors = ["#c9e265", "#f5a623", "#8b7cf7", "#7bc67e"];
-      for (let i = 0; i < 28; i += 1) {
+      for (let i = 0; i < 12; i += 1) {
         const speckle = document.createElement("span");
         speckle.style.left = `${Math.random() * 100}%`;
         speckle.style.animationDelay = `${-Math.random() * 14}s`;
@@ -74,9 +74,13 @@
           io.unobserve(entry.target);
         });
       },
-      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.06, rootMargin: "40px 0px -6% 0px" }
     );
-    reveal.forEach((el) => io.observe(el));
+    reveal.forEach((el) => {
+      const box = el.getBoundingClientRect();
+      if (box.top < window.innerHeight * 0.92) el.classList.add("is-in");
+      else io.observe(el);
+    });
   }
 
   const triad = document.querySelector("[data-triad]");
