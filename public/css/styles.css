@@ -1564,6 +1564,69 @@ textarea:focus-visible {
   color: var(--navy);
 }
 
+.valores-head {
+  text-align: center;
+  margin: 0 0 36px;
+  scroll-margin-top: calc(var(--header) + 16px);
+}
+
+.valores-head h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 36px);
+  margin: 8px 0 0;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.valor-card {
+  background: #fffcf6;
+  border: 1px solid rgba(11, 27, 52, 0.08);
+  border-radius: 20px;
+  padding: 36px 22px 28px;
+  text-align: center;
+}
+
+.valor-card h2,
+.valor-card h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.valor-card h2::after,
+.valor-card h3::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 1px;
+  margin: 14px auto 0;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.valor-card p {
+  margin: 16px 0 0;
+  color: #3d4450;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.valor-card.v-humanidad h2,
+.valor-card.v-humanidad h3 { color: #c47a3a; }
+.valor-card.v-empatia h2,
+.valor-card.v-empatia h3 { color: var(--navy-3); }
+.valor-card.v-integridad h2,
+.valor-card.v-integridad h3 { color: var(--green-deep); }
+.valor-card.v-consciencia h2,
+.valor-card.v-consciencia h3 { color: var(--navy); }
+
 .pact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1789,6 +1852,10 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .valores-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .inst-intro,
   .split,
   .contact-grid,
@@ -1844,7 +1911,8 @@ textarea:focus-visible {
   .book-list,
   .book-index,
   .book-shelf,
-  .doc-list {
+  .doc-list,
+  .valores-grid {
     grid-template-columns: 1fr;
   }
 
