@@ -1215,6 +1215,82 @@ textarea:focus-visible {
   flex: 1;
 }
 
+.lib-block {
+  margin-top: 56px;
+}
+
+.lib-block h2 {
+  font-family: var(--serif);
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.lib-block > p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  max-width: 720px;
+}
+
+.lib-block h3 {
+  margin: 28px 0 12px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.book-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 28px;
+}
+
+.book-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.doc-list {
+  display: grid;
+  gap: 8px;
+}
+
+.doc-file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: #fffcf6;
+  border: 1px solid rgba(11, 27, 52, 0.08);
+  border-radius: 12px;
+}
+
+.doc-file strong {
+  display: block;
+  font-size: 15px;
+}
+
+.doc-file span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.doc-file em {
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
 .laws {
   display: grid;
   gap: 12px;
@@ -1630,7 +1706,8 @@ textarea:focus-visible {
   .cards-5,
   .inst-grid,
   .resource-grid,
-  .enfoque-grid {
+  .enfoque-grid,
+  .book-list {
     grid-template-columns: 1fr;
   }
   .hero { padding: 0; }
