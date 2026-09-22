@@ -1,5 +1,7 @@
 # Johan López — Sitio web profesional
 
+Sitio en línea: [https://johanlopezpsicologo.com](https://johanlopezpsicologo.com)
+
 Página de psicología clínica, salud mental y drogodependencias. Lista para subir a [Render](https://render.com).
 
 ## Cómo está organizado

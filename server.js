@@ -117,6 +117,42 @@ app.use((req, res) => {
   res.status(404).sendFile(path.join(PUBLIC_DIR, "404.html"));
 });
 
+const INDEXNOW_KEY = "71dadb1225ef4b83a7440c9843242656";
+const SITE_HOST = "johanlopezpsicologo.com";
+const INDEX_URLS = [
+  "https://johanlopezpsicologo.com/",
+  "https://johanlopezpsicologo.com/enfoque",
+  "https://johanlopezpsicologo.com/mision",
+  "https://johanlopezpsicologo.com/biblioteca",
+  "https://johanlopezpsicologo.com/reglamentacion",
+  "https://johanlopezpsicologo.com/recursos/como-hablar-con-tu-hijo",
+  "https://johanlopezpsicologo.com/recursos/senales-de-alerta",
+  "https://johanlopezpsicologo.com/recursos/primeros-auxilios-psicologicos",
+  "https://johanlopezpsicologo.com/recursos/crisis-emocional",
+  "https://johanlopezpsicologo.com/recursos/nino-interior",
+  "https://johanlopezpsicologo.com/recursos/ruta-atencion-colegios",
+];
+
+async function notifySearchEngines() {
+  if (process.env.NODE_ENV !== "production") return;
+  try {
+    const response = await fetch("https://api.indexnow.org/indexnow", {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify({
+        host: SITE_HOST,
+        key: INDEXNOW_KEY,
+        keyLocation: `https://${SITE_HOST}/${INDEXNOW_KEY}.txt`,
+        urlList: INDEX_URLS,
+      }),
+    });
+    console.log(`IndexNow ${response.status}`);
+  } catch (error) {
+    console.error("IndexNow", error.message);
+  }
+}
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Johan López — sitio listo en http://localhost:${PORT}`);
+  notifySearchEngines();
 });
