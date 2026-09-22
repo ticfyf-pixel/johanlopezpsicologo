@@ -64,5 +64,12 @@ Si no quieres Node, en Render elige **Static Site**, carpeta de publicación `pu
 
 ## Después del primer deploy
 
-- Cambia la URL de `public/sitemap.xml` y `public/robots.txt` por tu dominio real.
-- Pega los enlaces reales de Facebook, Instagram y LinkedIn en el pie de `public/index.html`.
+El dominio canónico es `https://johanlopezpsicologo.com`. `www` redirige a esa dirección.
+
+Para aparecer en Google:
+
+1. Entra a [Google Search Console](https://search.google.com/search-console).
+2. Agrega la propiedad **Prefijo de URL**: `https://johanlopezpsicologo.com`.
+3. Verifica el dominio (registro TXT en el DNS o archivo HTML).
+4. En **Sitemaps**, envía `https://johanlopezpsicologo.com/sitemap.xml`.
+5. En **Inspección de URLs**, pide indexación de la página de inicio.

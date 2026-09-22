@@ -115,6 +115,7 @@
 
   const chips = document.querySelectorAll("[data-filter]");
   const cards = document.querySelectorAll("[data-cats]");
+  const sections = document.querySelectorAll(".lib-section");
   chips.forEach((chip) => {
     chip.addEventListener("click", () => {
       chips.forEach((c) => c.classList.remove("is-on"));
@@ -123,6 +124,11 @@
       cards.forEach((card) => {
         const show = value === "todos" || card.dataset.cats.includes(value);
         card.style.display = show ? "" : "none";
+      });
+      sections.forEach((section) => {
+        const items = [...section.querySelectorAll("[data-cats]")];
+        const any = items.some((el) => el.style.display !== "none");
+        section.style.display = any ? "" : "none";
       });
     });
   });
