@@ -1586,6 +1586,12 @@ textarea:focus-visible {
 .enfoque-quote {
   max-width: 760px;
   margin: 40px auto 0;
+  color: var(--green-deep);
+  border-left-color: var(--green);
+}
+
+.enfoque-quote span {
+  color: var(--green);
 }
 
 .principio-list {
