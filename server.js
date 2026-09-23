@@ -111,6 +111,10 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
+app.get(["/biblioteca", "/biblioteca.html"], (_req, res) => {
+  res.redirect(301, "/sugerencias");
+});
+
 app.use(express.static(PUBLIC_DIR, { extensions: ["html"] }));
 
 app.use((req, res) => {
@@ -124,7 +128,7 @@ const INDEX_URLS = [
   "https://johanlopezpsicologo.com/enfoque",
   "https://johanlopezpsicologo.com/mision",
   "https://johanlopezpsicologo.com/valores",
-  "https://johanlopezpsicologo.com/biblioteca",
+  "https://johanlopezpsicologo.com/sugerencias",
   "https://johanlopezpsicologo.com/reglamentacion",
   "https://johanlopezpsicologo.com/recursos/como-hablar-con-tu-hijo",
   "https://johanlopezpsicologo.com/recursos/senales-de-alerta",

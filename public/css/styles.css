@@ -1544,6 +1544,7 @@ textarea:focus-visible {
   font-family: var(--serif);
   font-size: 30px;
   margin: 0 0 16px;
+  letter-spacing: 0.06em;
 }
 
 .mv-card p {
@@ -1574,6 +1575,57 @@ textarea:focus-visible {
   font-family: var(--serif);
   font-size: clamp(28px, 3vw, 36px);
   margin: 8px 0 0;
+}
+
+.enfoque-lead {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  color: #3d4450;
+}
+
+.enfoque-quote {
+  max-width: 760px;
+  margin: 40px auto 0;
+}
+
+.principio-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 22px;
+  counter-reset: principio;
+}
+
+.principio-list li {
+  position: relative;
+  padding: 0 0 0 56px;
+  counter-increment: principio;
+}
+
+.principio-list li::before {
+  content: counter(principio, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.principio-list strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--navy);
+}
+
+.principio-list p {
+  margin: 0;
+  color: #3d4450;
 }
 
 .valores-grid {
