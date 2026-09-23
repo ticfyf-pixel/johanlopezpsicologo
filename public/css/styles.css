@@ -1682,8 +1682,8 @@ textarea:focus-visible {
 .valor-card.v-empatia h3 { color: var(--navy-3); }
 .valor-card.v-integridad h2,
 .valor-card.v-integridad h3 { color: var(--green-deep); }
-.valor-card.v-consciencia h2,
-.valor-card.v-consciencia h3 { color: var(--navy); }
+.valor-card.v-conciencia h2,
+.valor-card.v-conciencia h3 { color: var(--navy); }
 
 .pact-grid {
   display: grid;
